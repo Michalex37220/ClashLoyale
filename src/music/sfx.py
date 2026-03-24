@@ -16,6 +16,6 @@ def loop(sound):
     """Loop a sound infinitely."""
     sound.play(loops=-1)
 
-def hog_niger_sfx():
+def hog_rider_sfx():
     hog_sfx = start_sfx("spawn_hog_rider.mp3")
     # loop(hog_sfx) ne décommenter pas c'est insuportable
