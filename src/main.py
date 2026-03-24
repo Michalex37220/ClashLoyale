@@ -1,9 +1,11 @@
 # All of this are just example usages of different parts of the game.
 import pygame
+import music.music
+from music.music import sound_init, start_music, combat_theme
+from music.sfx import hog_niger_sfx
 
 # Pygame setup
 pygame.init()
-pygame.mixer.init()
 pygame.font.init()
 
 pygame.display.set_caption("Clash Loyale")
@@ -38,9 +40,12 @@ screen.blit(arena_img, (screen.get_width()/2-arena_img.get_size()[0]/2, 0))
 screen.blit(title_text, title_rect)
 pygame.display.flip()
 
-start_sound = pygame.mixer.Sound("sounds/spawn_hog_rider.mp3")
-start_sound.play()
+# base initialisation
+sound_init()
+combat_theme()
+hog_niger_sfx()
 
+#  actually running
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -50,5 +55,6 @@ while running:
 
     # Limits FPS to 60
     dt = clock.tick(60) / 1000
+
 
 pygame.quit()
