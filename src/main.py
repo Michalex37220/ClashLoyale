@@ -10,7 +10,7 @@ pygame.display.set_caption("Clash Loyale")
 icon = pygame.image.load("sprites/game_icon.png") # PyInstaller ?
 pygame.display.set_icon(icon)
 
-screen = pygame.display.set_mode((1000,1000))
+screen = pygame.display.set_mode((900,900))
 clock = pygame.time.Clock()
 
 running = True
@@ -19,17 +19,12 @@ dt = 0
 # Game variables
 background_color = "#202020"
 text_color = "#EEEEEE"
-green_land_color = "#55D930"
-green_land_alt_color = "#4CC72A"
-path_land_color = "#F8B03C"
-path_land_alt_color = "#E0A036"
-river_color = "#00A8BD"
 
 arena_img = pygame.image.load("sprites/arena.png").convert()
 arena_img_size = arena_img.get_size()
 arena_img = pygame.transform.scale(arena_img, (screen.get_width()/2, screen.get_height()))
 
-font = pygame.font.Font('fonts/YouBlockhead.ttf', 40)
+font = pygame.font.Font('fonts/YouBlockhead.ttf', 30)
 title_text = font.render('Thomate', True, text_color)
 title_rect = title_text.get_rect()
 
@@ -38,7 +33,7 @@ screen.blit(arena_img, (screen.get_width()/2-arena_img.get_size()[0]/2, 0))
 screen.blit(title_text, title_rect)
 pygame.display.flip()
 
-start_sound = pygame.mixer.Sound("sounds/spawn_hog_rider.mp3")
+start_sound = pygame.mixer.Sound("sounds/pancakes.mp3")
 start_sound.play()
 
 while running:
