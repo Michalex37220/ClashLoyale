@@ -27,12 +27,3 @@ def rewind_music():
         print("Music is not playing!")
     else:
         pygame.mixer.music.rewind()
-
-# Thèmes spécifiques
-def combat_theme():
-    start_music("combat.mp3")
-    loop_music()  # boucle le combat theme
-
-def deck_theme():
-    start_music("deck.mp3")  # joue une fois
-

@@ -1,8 +1,8 @@
 # All of this are just example usages of different parts of the game.
 import pygame
 import music.music
-from music.music import sound_init, start_music, combat_theme, deck_theme
-from music.sfx import hog_rider_sfx
+from music.music import sound_init, start_music
+
 
 # Pygame setup
 pygame.init()
@@ -43,7 +43,9 @@ pygame.display.flip()
 # base initialisation
 sound_init()
 #deck_theme()
-combat_theme()
+start_music("combat.mp3")
+#combat_theme()
+#deck_theme()
 #hog_rider_sfx()
 #  actually running
 while running:
