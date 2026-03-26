@@ -26,8 +26,9 @@ def close_game(is_error = False):
 # Pygame setup
 try:
     pygame.init()
-    pygame.mixer.init()
     pygame.font.init()
+
+    sound_init()
 
     pygame.display.set_caption("Clash Loyale")
     icon = pygame.image.load("sprites/game_icon.png") # PyInstaller ?
@@ -69,7 +70,7 @@ try:
 
     log.logger.send("Clash Loyale is ready ! hehehehaw", logging.INFO)
 
-    sound_init()
+
     play_music("combat.mp3")
 
     while running:

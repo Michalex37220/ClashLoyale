@@ -9,6 +9,7 @@ from utils import log
 def sound_init():
     """Initialize the mixer."""
     pygame.mixer.init()
+    log.logger.send("Initialized sound system", logging.DEBUG)
 
 def play_music(filename):
     """Load and play a music file once."""
