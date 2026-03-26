@@ -18,7 +18,7 @@ class GameUnit:
             if sqrt((self.x-REDcoordonnées[i][0])**2+(self.y-REDcoordonnées[i][1])**2) < sqrt((self.x-REDcoordonnées[id.index[bestID]][0])**2+(self.y-bluecoordonnées[id.index[bestID]][1])**2):
                 if REDtype[id.index[bestID]] != "tower":# Ce i in range sert à identifier l'ID de l'unité ennemie la plus proche
                     if sqrt((self.x-REDcoordonnées[id.index[bestID]][0])**2+(self.y-bluecoordonnées[id.index[bestID]][1])**2) < 200: #portée de reconnaissance , au dela de 200 de distance l'unité est ignorée
-                        if self.y >0:
+                        if self.y >0: #ingore l'unité si elle est de l'autre coté du pont
                             if REDcoordonnées[id.index[bestID]][1]>0:
                                 bestID=REDid[i]
                         else:
@@ -42,3 +42,13 @@ def id_creator():
     global identification
     identification+=1
     return identification
+
+
+
+
+
+
+
+
+
+
