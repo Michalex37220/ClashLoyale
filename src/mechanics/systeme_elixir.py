@@ -1,6 +1,6 @@
 import time as cheval
 
-REDelixir = 7
+redElixir = 7
 BLUEelixir = 7
 GameTime = 0 # chronometre de la game
 
