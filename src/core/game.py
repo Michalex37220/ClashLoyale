@@ -6,13 +6,14 @@ from core.sound import Sound
 from core.state import StateManager, GameState
 from core.ui import UI
 from levels.main_menu import MainMenu
+from levels.game_screen import GameScreen
 from utils import log
 
 
 class Game:
     def __init__(self):
         self.running = True
-        self.state = StateManager(GameState.MENU)
+        self.state = StateManager(GameState.GAME)
 
         self.ui = UI()
         self.input = Input(self.state)
@@ -20,6 +21,10 @@ class Game:
 
         self.main_menu = MainMenu(self.ui.screen, self.state)
         self.state.screens[GameState.MENU] = self.main_menu
+
+        self.game_screen = GameScreen(self.ui.screen, self.state)
+        self.state.screens[GameState.GAME] = self.game_screen
+
 
         # Add screens here with state definitions
         # Example: self.test_menu = TestMenu(self.ui.screen, self.state)
